@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://lksxsffdago3"]
+
+[ext_resource type="PackedScene" uid="uid://chfduxatxxgpr" path="res://element/character/character_body_2d.tscn" id="1_80nbo"]
+
+[node name="Game" type="Node2D" unique_id=2146137376]
+
+[node name="CharacterBody2D" parent="." unique_id=1197402746 instance=ExtResource("1_80nbo")]
+texture_filter = 1

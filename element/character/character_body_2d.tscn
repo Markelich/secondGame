@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://chfduxatxxgpr"]
+
+[ext_resource type="SpriteFrames" uid="uid://bnwhi74n132hp" path="res://element/character/characterAnimation.tres" id="1_5v4hx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhunq"]
+radius = 7.0
+height = 32.0
+
+[node name="character" type="CharacterBody2D" unique_id=1197402746]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573869798]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1362300860]
+shape = SubResource("CapsuleShape2D_bhunq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=520078523]
+texture_filter = 1
+position = Vector2(5, -5)
+sprite_frames = ExtResource("1_5v4hx")
+animation = &"idle"
+frame_progress = 0.8616197
+speed_scale = 1.4
