@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://lksxsffdago3"]
 
 [ext_resource type="PackedScene" uid="uid://chfduxatxxgpr" path="res://element/character/character_body_2d.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://c7na4lgx0k77e" path="res://element/platform/plaform.tscn" id="2_e2o6t"]
 
 [node name="Game" type="Node2D" unique_id=2146137376]
 
 [node name="CharacterBody2D" parent="." unique_id=1197402746 instance=ExtResource("1_80nbo")]
 texture_filter = 1
+position = Vector2(147, 261)
+
+[node name="plaform" parent="." unique_id=681802239 instance=ExtResource("2_e2o6t")]
+position = Vector2(112, 293)
+
+[node name="plaform2" parent="." unique_id=1445151942 instance=ExtResource("2_e2o6t")]
+position = Vector2(356, 259)
+
+[node name="plaform3" parent="." unique_id=139966202 instance=ExtResource("2_e2o6t")]
+position = Vector2(609, 341)

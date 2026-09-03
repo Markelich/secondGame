@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://chfduxatxxgpr"]
 
 [ext_resource type="SpriteFrames" uid="uid://bnwhi74n132hp" path="res://element/character/characterAnimation.tres" id="1_5v4hx"]
+[ext_resource type="Script" uid="uid://2ypt2ywwinnu" path="res://element/character/character_body_2d.gd" id="1_h5500"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhunq"]
 radius = 7.0
 height = 32.0
 
 [node name="character" type="CharacterBody2D" unique_id=1197402746]
+script = ExtResource("1_h5500")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573869798]
 
@@ -18,5 +20,41 @@ texture_filter = 1
 position = Vector2(5, -5)
 sprite_frames = ExtResource("1_5v4hx")
 animation = &"idle"
-frame_progress = 0.8616197
+frame_progress = 0.0529727
 speed_scale = 1.4
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1073115924]
+
+[node name="debugdata" type="Control" parent="." unique_id=1090321209]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 48.0
+offset_top = -58.0
+offset_right = 88.0
+offset_bottom = -41.0
+tooltip_text = "
+"
+
+[node name="Label" type="Label" parent="debugdata" unique_id=697219321]
+layout_mode = 0
+offset_left = -62.0
+offset_top = 1.0
+offset_right = -29.0
+offset_bottom = 24.0
+text = "Ху5сосина"
+
+[node name="debugdata2" type="Control" parent="." unique_id=1278034376]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -26.0
+offset_top = -33.0
+offset_right = 14.0
+offset_bottom = -22.0
+
+[node name="Label" type="Label" parent="debugdata2" unique_id=1714443178]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -5.0
+offset_right = 95.0
+offset_bottom = 18.0
+text = "Ху5сосина"
