@@ -3,7 +3,6 @@
 [ext_resource type="SpriteFrames" uid="uid://bnwhi74n132hp" path="res://element/character/characterAnimation.tres" id="1_5v4hx"]
 [ext_resource type="Script" uid="uid://2ypt2ywwinnu" path="res://element/character/character_body_2d.gd" id="1_h5500"]
 [ext_resource type="Script" uid="uid://bcoefdc0pyhj1" path="res://element/character/fsm/fsm.gd" id="3_w17fs"]
-[ext_resource type="Script" uid="uid://cekla61e1s0mr" path="res://element/character/idle.gd" id="4_m2b8w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhunq"]
 radius = 7.0
@@ -64,10 +63,8 @@ text = "Ху5сосина"
 
 [node name="FSM" type="Node" parent="." unique_id=1984849516]
 script = ExtResource("3_w17fs")
-start_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="FSM" unique_id=1115512679]
-script = ExtResource("4_m2b8w")
 
 [node name="Run" type="Node" parent="FSM" unique_id=341368857]
 
