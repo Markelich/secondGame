@@ -31,5 +31,6 @@ func change_to(target_state: String, _msg: Dictionary={}):
 		return
 	else:
 		state.exit()
-		state.get_node(target_state)
+		state = get_node(target_state)
+		state.enter(_msg)
 		print("State" + state.name)
