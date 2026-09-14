@@ -12,3 +12,4 @@ func inner_physics_process(_delta: float) -> void:
 	
 	if Input.is_action_pressed('ui_left') or Input.is_action_pressed('ui_right'):
 		state_machine.change_to("Run")
+	player.animation.play('idle')

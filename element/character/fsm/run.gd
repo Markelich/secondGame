@@ -12,14 +12,23 @@ func  inner_physics_process(_delta: float) -> void:
 		state_machine.change_to("Air", {do_jump = true})
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
-	$"../../debugdata/VBox/Label".text = str(player.velocity)
-	$"../../debugdata/VBox/Label2".text = str(direction)
+
 	if direction:
 		player.velocity.x = lerp(player.velocity.x, player.SPEED * direction, 0.2)
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/15)
+		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/7)
 	print(player.velocity)	
+	
+	if direction < 0:
+		player.animation.set_flip_h(true)
+	elif direction > 0:
+		player.animation.set_flip_h(false)
+	
 	player.move_and_slide()
+	$"../../debugdata/VBox/Label".text = str(player.velocity)
+	$"../../debugdata/VBox/Label2".text = str(direction)
 	
 	if player.velocity.x == 0 and direction == 0:
 		state_machine.change_to("Idle")
+
+	player.animation.play('run')

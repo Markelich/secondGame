@@ -8,21 +8,40 @@ func enter(_msg: Dictionary={}):
 	
 
 func inner_physics_process(_delta: float) -> void:
+	
+	if player.velocity.y < -100:
+		player.animation.play("jump")
+	elif player.velocity.y >= -100 and player.velocity.y <= 100:
+		player.animation.play("jumptofall")
+	elif player.velocity.y > 100:
+		player.animation.play("fall")
+	
 	player.velocity += player.get_gravity() * _delta
 	
+	
+	
 	var direction := Input.get_axis("ui_left", "ui_right")
-	$"../../debugdata/VBox/Label2".set_text(str(direction))
+	
 	if direction:
 		player.velocity.x = lerp(player.velocity.x, player.SPEED * direction, 0.2)
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/15)
-	$"../../debugdata/VBox/Label".set_text(str(player.velocity))
+		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/7)
+	
 	print(player.velocity)
+	
+	if direction < 0:
+		player.animation.set_flip_h(true)
+	elif direction > 0:
+		player.animation.set_flip_h(false)
 
 	player.move_and_slide()
+	$"../../debugdata/VBox/Label".set_text(str(player.velocity))
+	$"../../debugdata/VBox/Label2".set_text(str(direction))
 	
 	if player.is_on_floor():
 		if player.velocity.x == 0:
 			state_machine.change_to("Idle")
 		else:
 			state_machine.change_to("Run")
+	
+	

@@ -9,10 +9,10 @@
 position = Vector2(112, 293)
 
 [node name="plaform2" parent="." unique_id=1445151942 instance=ExtResource("2_e2o6t")]
-position = Vector2(356, 259)
+position = Vector2(336, 263)
 
 [node name="plaform3" parent="." unique_id=139966202 instance=ExtResource("2_e2o6t")]
-position = Vector2(609, 341)
+position = Vector2(551, 348)
 
 [node name="CharacterBody2D" parent="." unique_id=1197402746 instance=ExtResource("1_80nbo")]
 texture_filter = 1
