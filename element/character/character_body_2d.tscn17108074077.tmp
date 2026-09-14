@@ -24,7 +24,7 @@ texture_filter = 1
 position = Vector2(5, -5)
 sprite_frames = ExtResource("1_5v4hx")
 animation = &"run"
-frame_progress = 0.09040278
+frame_progress = 0.65615416
 speed_scale = 1.4
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1073115924]

@@ -14,10 +14,9 @@ func  inner_physics_process(_delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 
 	if direction:
-		player.velocity.x = lerp(player.velocity.x, player.SPEED * direction, 0.2)
+		player.velocity.x = lerp(player.velocity.x, player.SPEED * direction, 0.25)
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/7)
-	print(player.velocity)	
+		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/9)
 	
 	if direction < 0:
 		player.animation.set_flip_h(true)
