@@ -19,9 +19,12 @@ func  inner_physics_process(_delta: float) -> void:
 		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/9)
 	
 	if direction < 0:
+		player.animation.position.x = -10
 		player.animation.set_flip_h(true)
+
 	elif direction > 0:
 		player.animation.set_flip_h(false)
+		player.animation.position.x = 0
 	
 	player.move_and_slide()
 	$"../../debugdata/VBox/Label".text = str(player.velocity)

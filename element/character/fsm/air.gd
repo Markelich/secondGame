@@ -11,6 +11,7 @@ func inner_physics_process(_delta: float) -> void:
 	
 	if Input.is_action_pressed("ui_accept") and player.velocity.y < 0:
 		player.velocity += player.get_gravity() * _delta
+		print("ПРЫЖОК")
 	else: player.velocity += player.get_gravity()*2.1 * _delta 
 	
 	if player.velocity.y < -100:
