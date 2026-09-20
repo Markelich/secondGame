@@ -1,19 +1,32 @@
 extends StatePlayer
 
+@onready var bufJump = $"../../TimerBufferJump"
+@onready var coyoteTimer = $"../../CoyoteTimer"
+
 func enter(_msg: Dictionary={}):
 	$"../../debugdata/VBox/Label3".set_text(name)
 	if _msg.has("do_jump"):
 		player.velocity.y = player.JUMP_VELOCITY
-
+	else:
+		coyoteTimer.start()
 	
 
 func inner_physics_process(_delta: float) -> void:
 	
 	if Input.is_action_pressed("ui_accept") and player.velocity.y < 0:
 		player.velocity += player.get_gravity() * _delta
-		print("ПРЫЖОК")
 	else: player.velocity += player.get_gravity()*2.1 * _delta 
 	
+	
+	if Input.is_action_just_pressed("ui_accept") and coyoteTimer.time_left > 0:
+		player.velocity.y = player.JUMP_VELOCITY
+		print("Коёт", coyoteTimer.time_left)
+		coyoteTimer.stop()
+	elif Input.is_action_just_pressed("ui_accept"):
+		print("Нажал на прыжок в прыжке")
+		bufJump.start()
+
+		
 	if player.velocity.y < -100:
 		player.animation.play("jump")
 	elif player.velocity.y >= -100 and player.velocity.y <= 100:
@@ -21,9 +34,6 @@ func inner_physics_process(_delta: float) -> void:
 	elif player.velocity.y > 100:
 		player.animation.play("fall")
 		
-
-
-	
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
@@ -44,10 +54,14 @@ func inner_physics_process(_delta: float) -> void:
 	$"../../debugdata/VBox/Label2".set_text(str(direction))
 	
 	
-	if player.is_on_floor():
+	if player.is_on_floor() and bufJump.time_left > 0:
+		player.velocity.y = player.JUMP_VELOCITY
+	elif player.is_on_floor():
 		if player.velocity.x == 0:
 			state_machine.change_to("Idle")
 		else:
 			state_machine.change_to("Run")
+		 		
+	
 	
 	

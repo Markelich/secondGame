@@ -24,8 +24,7 @@ shape = SubResource("CapsuleShape2D_bhunq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=520078523]
 texture_filter = 1
 sprite_frames = ExtResource("1_5v4hx")
-animation = &"test"
-frame_progress = 0.6228598
+animation = &"idle"
 speed_scale = 1.4
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1073115924]
@@ -75,5 +74,4 @@ wait_time = 0.11
 one_shot = true
 
 [node name="CoyoteTimer" type="Timer" parent="." unique_id=1439815702]
-wait_time = 0.1
 one_shot = true

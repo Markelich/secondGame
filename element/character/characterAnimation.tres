@@ -22,6 +22,18 @@
 [ext_resource type="Texture2D" uid="uid://djpglg7untvgc" path="res://assets/Warrior/Individual Sprite/UptoFall/Warrior_UptoFall_1.png" id="13_wv8te"]
 [ext_resource type="Texture2D" uid="uid://2ifnrcsycm84" path="res://assets/Warrior/Individual Sprite/Run/Warrior_Run_8.png" id="14_dkmlw"]
 [ext_resource type="Texture2D" uid="uid://d267qqd3q1d7w" path="res://assets/Warrior/Individual Sprite/UptoFall/Warrior_UptoFall_2.png" id="14_mhlly"]
+[ext_resource type="Texture2D" uid="uid://dlx73pbt2xgv4" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_1.png" id="23_ic4dw"]
+[ext_resource type="Texture2D" uid="uid://gt2cwishm2vi" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_2.png" id="24_k8tya"]
+[ext_resource type="Texture2D" uid="uid://b7j2gvj0foo8a" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_3.png" id="25_o1cix"]
+[ext_resource type="Texture2D" uid="uid://clpjqhtbq0e0m" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_4.png" id="26_o2grw"]
+[ext_resource type="Texture2D" uid="uid://c0l0rc7tvvpbg" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_5.png" id="27_ddyrl"]
+[ext_resource type="Texture2D" uid="uid://ojfqcigyaa3a" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_6.png" id="28_mg0gw"]
+[ext_resource type="Texture2D" uid="uid://cbf4wkdiyka03" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_7.png" id="29_g5o1i"]
+[ext_resource type="Texture2D" uid="uid://dx555hoyf1k6b" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_8.png" id="30_lklhr"]
+[ext_resource type="Texture2D" uid="uid://d28a7kxhrcdff" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_9.png" id="31_q85vv"]
+[ext_resource type="Texture2D" uid="uid://c80kp4k1dh7yd" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_10.png" id="32_i7ps3"]
+[ext_resource type="Texture2D" uid="uid://bd2hjejey3fa1" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_11.png" id="33_ubt6k"]
+[ext_resource type="Texture2D" uid="uid://buelh0h3dm1lt" path="res://assets/Warrior/Individual Sprite/Attack/Warrior_Attack_12.png" id="34_veqh5"]
 
 [resource]
 animations = [{
@@ -115,4 +127,45 @@ animations = [{
 "loop": 1,
 "name": &"run",
 "speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_ic4dw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_k8tya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_o1cix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_o2grw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ddyrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_mg0gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_g5o1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_lklhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_q85vv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_i7ps3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ubt6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_veqh5")
+}],
+"loop": 1,
+"name": &"test",
+"speed": 5.0
 }]
