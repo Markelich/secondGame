@@ -19,7 +19,7 @@ func  inner_physics_process(_delta: float) -> void:
 		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/9)
 	
 	if direction < 0:
-		player.animation.position.x = -10
+		player.animation.position.x = 0
 		player.animation.set_flip_h(true)
 
 	elif direction > 0:

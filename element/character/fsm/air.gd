@@ -14,9 +14,12 @@ func enter(_msg: Dictionary={}):
 func inner_physics_process(_delta: float) -> void:
 	
 	if Input.is_action_pressed("ui_accept") and player.velocity.y < 0:
-		player.velocity += player.get_gravity() * _delta
-	else: player.velocity += player.get_gravity()*2.1 * _delta 
-	
+		player.velocity += player.get_gravity() * 0.88 * _delta
+	elif player.velocity.y >= 0:
+		player.velocity += player.get_gravity() * 2.5 * _delta
+	else: 
+		player.velocity += player.get_gravity() * 3.7 * _delta
+
 	
 	if Input.is_action_just_pressed("ui_accept") and coyoteTimer.time_left > 0:
 		player.velocity.y = player.JUMP_VELOCITY
@@ -38,9 +41,9 @@ func inner_physics_process(_delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
 	if direction:
-		player.velocity.x = lerp(player.velocity.x, player.SPEED * direction, 0.2)
+		player.velocity.x = lerp(player.velocity.x, player.SPEED * direction, 0.1)
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/20)
+		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/50)
 	
 	
 	if direction < 0:
