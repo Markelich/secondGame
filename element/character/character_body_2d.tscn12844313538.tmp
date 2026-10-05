@@ -32,8 +32,6 @@ texture_filter = 1
 material = SubResource("ShaderMaterial_wkn5b")
 sprite_frames = ExtResource("1_5v4hx")
 animation = &"return"
-frame = 2
-frame_progress = 1.0
 speed_scale = 1.4
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1073115924]

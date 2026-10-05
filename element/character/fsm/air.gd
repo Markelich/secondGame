@@ -41,9 +41,9 @@ func inner_physics_process(_delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
 	if direction:
-		player.velocity.x = lerp(player.velocity.x, player.SPEED * direction, 0.1)
+		player.velocity.x = move_toward(player.velocity.x, player.SPEED * direction, player.ACCELETATION * _delta)
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/50)
+		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/10)
 	
 	
 	if direction < 0:
