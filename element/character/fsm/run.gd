@@ -1,22 +1,20 @@
 extends StatePlayer
 
+var _was_braking: bool = false
+var _braking_finished: bool = true
+
 
 func enter(_msg: Dictionary = {}) -> void:
 	$"../../debugdata/VBox/Label3".text = name
-
-	if not player.animation.animation_finished.is_connected(_on_anim_finished):
-		player.animation.animation_finished.connect(_on_anim_finished)
-
-
-func _on_anim_finished() -> void:
-	# После завершения breaking — сразу запускаем return
-	if player.animation.animation == "breaking":
-		player.animation.play("return")
+	_braking_finished = true
+	_was_braking = false
 
 
 func _play_if_not(anim: StringName) -> void:
 	if player.animation.animation != anim:
 		player.animation.play(anim)
+		if anim == "breaking":
+			_braking_finished = false
 
 
 func inner_physics_process(_delta: float) -> void:
@@ -38,22 +36,20 @@ func inner_physics_process(_delta: float) -> void:
 
 	if direction != 0:
 		if is_turning:
-			_play_if_not("breaking")
-			player.velocity.x = move_toward(
-				player.velocity.x, player.SPEED * direction, player.TURN_ACCELERATION * _delta
-			)
+			state_machine.change_to("Break")
 		else:
 			if abs(player.velocity.x) <= player.SPEED_POINT_TOFAST:
-				_play_if_not("run")
+				player.animation.play("run")
 			else:
-				_play_if_not("fastrun")
+				player.animation.play("fastrun")
 
 			player.velocity.x = move_toward(
 				player.velocity.x, player.SPEED * direction, player.ACCELETATION * _delta
 			)
 	else:
-		_play_if_not("breaking")
-		player.velocity.x = move_toward(player.velocity.x, 0, player.ACCELETATION * _delta)
+		player.velocity.x = move_toward(
+				player.velocity.x, player.SPEED * 0, player.ACCELETATION * _delta
+			)
 
 	if player.velocity.x < 0:
 		player.animation.position.x = 0
@@ -66,5 +62,5 @@ func inner_physics_process(_delta: float) -> void:
 	$"../../debugdata/VBox/Label".text = str(player.velocity)
 	$"../../debugdata/VBox/Label2".text = str(direction)
 
-	if player.velocity.x == 0 and direction == 0:
+	if abs(player.velocity.x) < 1.0 and direction == 0:
 		state_machine.change_to("Idle")

@@ -2,25 +2,37 @@
 
 [ext_resource type="Texture2D" uid="uid://dbd235auar3l0" path="res://assets/Sonic/PC _ Computer - Sonic Mania - Playable Characters - Sonic the Hedgehog.png" id="23_k8tya"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e43w4"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(588, 331, 49, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufwh5"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(637, 331, 49, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnims"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(686, 331, 49, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfxkr"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(735, 331, 49, 47)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_wne13"]
 atlas = ExtResource("23_k8tya")
 region = Rect2(784, 331, 49, 47)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8lx23"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j31l"]
 atlas = ExtResource("23_k8tya")
-region = Rect2(833, 331, 49, 47)
+region = Rect2(1029, 331, 49, 47)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0tbvj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqhaa"]
 atlas = ExtResource("23_k8tya")
-region = Rect2(882, 331, 49, 47)
+region = Rect2(1078, 331, 49, 47)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x5de8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3uam"]
 atlas = ExtResource("23_k8tya")
-region = Rect2(931, 331, 49, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fdi52"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(980, 331, 49, 47)
+region = Rect2(1127, 331, 49, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_81e62"]
 atlas = ExtResource("23_k8tya")
@@ -226,18 +238,6 @@ region = Rect2(392, 212, 49, 46)
 atlas = ExtResource("23_k8tya")
 region = Rect2(441, 212, 49, 46)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6j31l"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(1029, 331, 49, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bqhaa"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(1078, 331, 49, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t3uam"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(1127, 331, 49, 47)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhsnd"]
 atlas = ExtResource("23_k8tya")
 region = Rect2(2, 143, 46, 47)
@@ -286,43 +286,36 @@ region = Rect2(492, 143, 46, 47)
 atlas = ExtResource("23_k8tya")
 region = Rect2(541, 143, 46, 47)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e43w4"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(588, 331, 49, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ufwh5"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(637, 331, 49, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hnims"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(686, 331, 49, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yfxkr"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(735, 331, 49, 47)
-
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_e43w4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufwh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnims")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfxkr")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wne13")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8lx23")
+"texture": SubResource("AtlasTexture_6j31l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0tbvj")
+"texture": SubResource("AtlasTexture_bqhaa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x5de8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fdi52")
+"texture": SubResource("AtlasTexture_t3uam")
 }],
 "loop": 0,
 "name": &"breaking",
-"speed": 8.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -373,7 +366,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_veqh5")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"fall",
 "speed": 27.0
 }, {
@@ -613,7 +606,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t3uam")
 }],
-"loop": 0,
+"loop": 1,
 "name": &"return",
 "speed": 17.0
 }, {
