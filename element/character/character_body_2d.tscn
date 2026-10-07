@@ -40,9 +40,7 @@ shape = SubResource("CapsuleShape2D_bhunq")
 texture_filter = 1
 material = SubResource("ShaderMaterial_wkn5b")
 sprite_frames = ExtResource("1_5v4hx")
-animation = &"breaking"
-frame = 7
-frame_progress = 1.0
+animation = &"idle"
 speed_scale = 1.4
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1073115924]
@@ -58,9 +56,15 @@ tooltip_text = "
 "
 
 [node name="VBox" type="VBoxContainer" parent="debugdata" unique_id=1398848749]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.8
+anchor_top = -3.4710002
+anchor_right = -3.7000003
+anchor_bottom = 1.059
+offset_top = 0.007003784
+offset_right = 1.5258789e-05
+offset_bottom = -0.0030002594
 
 [node name="Label" type="Label" parent="debugdata/VBox" unique_id=697219321]
 layout_mode = 2
