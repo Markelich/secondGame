@@ -82,10 +82,6 @@ text = "Ху5сосина"
 layout_mode = 2
 text = "Ху5сосина"
 
-[node name="Label5" type="Label" parent="debugdata/VBox" unique_id=1660900799]
-layout_mode = 2
-text = "Ху5сосина"
-
 [node name="FSM" type="Node" parent="." unique_id=1984849516]
 script = ExtResource("3_w17fs")
 start_state = NodePath("Idle")

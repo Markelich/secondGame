@@ -40,7 +40,7 @@ shape = SubResource("CapsuleShape2D_bhunq")
 texture_filter = 1
 material = SubResource("ShaderMaterial_wkn5b")
 sprite_frames = ExtResource("1_5v4hx")
-animation = &"return"
+animation = &"break"
 speed_scale = 1.4
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1073115924]
@@ -75,14 +75,6 @@ layout_mode = 2
 text = "Ху5сосина"
 
 [node name="Label3" type="Label" parent="debugdata/VBox" unique_id=303057679]
-layout_mode = 2
-text = "Ху5сосина"
-
-[node name="Label4" type="Label" parent="debugdata/VBox" unique_id=1380955972]
-layout_mode = 2
-text = "Ху5сосина"
-
-[node name="Label5" type="Label" parent="debugdata/VBox" unique_id=1660900799]
 layout_mode = 2
 text = "Ху5сосина"
 

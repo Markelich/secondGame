@@ -2,37 +2,25 @@
 
 [ext_resource type="Texture2D" uid="uid://dbd235auar3l0" path="res://assets/Sonic/PC _ Computer - Sonic Mania - Playable Characters - Sonic the Hedgehog.png" id="23_k8tya"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e43w4"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(588, 331, 49, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ufwh5"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(637, 331, 49, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hnims"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(686, 331, 49, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yfxkr"]
-atlas = ExtResource("23_k8tya")
-region = Rect2(735, 331, 49, 47)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wne13"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnhbb"]
 atlas = ExtResource("23_k8tya")
 region = Rect2(784, 331, 49, 47)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6j31l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgslr"]
 atlas = ExtResource("23_k8tya")
-region = Rect2(1029, 331, 49, 47)
+region = Rect2(833, 331, 49, 47)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bqhaa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj223"]
 atlas = ExtResource("23_k8tya")
-region = Rect2(1078, 331, 49, 47)
+region = Rect2(882, 331, 49, 47)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t3uam"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fid4"]
 atlas = ExtResource("23_k8tya")
-region = Rect2(1127, 331, 49, 47)
+region = Rect2(931, 331, 49, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2do63"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(980, 331, 49, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_81e62"]
 atlas = ExtResource("23_k8tya")
@@ -290,6 +278,18 @@ region = Rect2(392, 212, 49, 46)
 atlas = ExtResource("23_k8tya")
 region = Rect2(441, 212, 49, 46)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j31l"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(1029, 331, 49, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqhaa"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(1078, 331, 49, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3uam"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(1127, 331, 49, 47)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhsnd"]
 atlas = ExtResource("23_k8tya")
 region = Rect2(2, 143, 46, 47)
@@ -338,36 +338,47 @@ region = Rect2(492, 143, 46, 47)
 atlas = ExtResource("23_k8tya")
 region = Rect2(541, 143, 46, 47)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e43w4"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(588, 331, 49, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufwh5"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(637, 331, 49, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnims"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(686, 331, 49, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfxkr"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(735, 331, 49, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wne13"]
+atlas = ExtResource("23_k8tya")
+region = Rect2(784, 331, 49, 47)
+
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e43w4")
+"texture": SubResource("AtlasTexture_mnhbb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ufwh5")
+"texture": SubResource("AtlasTexture_kgslr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hnims")
+"texture": SubResource("AtlasTexture_kj223")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yfxkr")
+"texture": SubResource("AtlasTexture_2fid4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wne13")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6j31l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bqhaa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t3uam")
+"texture": SubResource("AtlasTexture_2do63")
 }],
-"loop": 0,
-"name": &"breaking",
-"speed": 18.0
+"loop": 1,
+"name": &"break",
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -697,9 +708,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t3uam")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"return",
-"speed": 17.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -754,8 +765,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yfxkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wne13")
 }],
 "loop": 0,
 "name": &"startbreaking",
-"speed": 11.0
+"speed": 20.0
 }]
