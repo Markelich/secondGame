@@ -30,20 +30,20 @@ func inner_physics_process(_delta: float) -> void:
 		bufJump.start()
 
 		
-	if player.velocity.y < -100:
-		player.animation.play("jump")
-	elif player.velocity.y >= -100 and player.velocity.y <= 100:
-		player.animation.play("jumptofall")
-	elif player.velocity.y > 100:
-		player.animation.play("fall")
-		
+	#if player.velocity.y < -100:
+		#player.animation.play("jump")
+	#elif player.velocity.y >= -100 and player.velocity.y <= 100:
+		#player.animation.play("jumptofall")
+	#elif player.velocity.y > 100:
+		#player.animation.play("fall")
+	player.animation.play("jump")	
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
 	if direction:
 		player.velocity.x = move_toward(player.velocity.x, player.SPEED * direction, player.ACCELETATION * _delta)
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED/10)
+		player.velocity.x = move_toward(player.velocity.x, 0, player.ACCELETATION * _delta)
 	
 	
 	if player.velocity.x < 0:

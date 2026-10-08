@@ -26,10 +26,10 @@ func _physics_process(delta: float) -> void:
 	
 func change_to(target_state: String, _msg: Dictionary={}):
 	if not has_node(target_state):
-		print("Trying get wrong state: " + target_state)
+		#print("Trying get wrong state: " + target_state)
 		return
 	else:
 		state.exit()
 		state = get_node(target_state)
 		state.enter(_msg)
-		print("State" + state.name)
+		#print("State" + state.name)

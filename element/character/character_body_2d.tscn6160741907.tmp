@@ -7,9 +7,7 @@
 [ext_resource type="Script" uid="uid://cekla61e1s0mr" path="res://element/character/fsm/idle.gd" id="4_m2b8w"]
 [ext_resource type="Script" uid="uid://bdtn8aamlrk1k" path="res://element/character/fsm/run.gd" id="5_urrlp"]
 [ext_resource type="Script" uid="uid://cp7rnx1t6rmxh" path="res://element/character/fsm/air.gd" id="6_b844p"]
-[ext_resource type="Script" uid="uid://lmyiwpkx17ap" path="res://element/character/fsm/startbreaking.gd" id="8_u1l4j"]
-[ext_resource type="Script" uid="uid://fpiqx46eqp15" path="res://element/character/return.gd" id="9_wdty2"]
-[ext_resource type="Script" uid="uid://lmyiwpkx17ap" path="res://element/character/break.gd" id="10_mfdun"]
+[ext_resource type="Script" uid="uid://lmyiwpkx17ap" path="res://element/character/break.gd" id="8_u1l4j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhunq"]
 radius = 11.0
@@ -42,9 +40,7 @@ shape = SubResource("CapsuleShape2D_bhunq")
 texture_filter = 1
 material = SubResource("ShaderMaterial_wkn5b")
 sprite_frames = ExtResource("1_5v4hx")
-animation = &"break"
-frame = 4
-frame_progress = 1.0
+animation = &"return"
 speed_scale = 1.4
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1073115924]
@@ -107,14 +103,8 @@ script = ExtResource("5_urrlp")
 [node name="Air" type="Node" parent="FSM" unique_id=1288481467]
 script = ExtResource("6_b844p")
 
-[node name="Startbreaking" type="Node" parent="FSM" unique_id=1068955549]
+[node name="Break" type="Node" parent="FSM" unique_id=1068955549]
 script = ExtResource("8_u1l4j")
-
-[node name="Return" type="Node" parent="FSM" unique_id=214485289]
-script = ExtResource("9_wdty2")
-
-[node name="Break" type="Node" parent="FSM" unique_id=254058759]
-script = ExtResource("10_mfdun")
 
 [node name="TimerBufferJump" type="Timer" parent="." unique_id=1533169143]
 wait_time = 0.11
