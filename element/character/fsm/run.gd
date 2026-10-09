@@ -70,9 +70,8 @@ func inner_physics_process(_delta: float) -> void:
 	player.move_and_slide()
 	$"../../debugdata/VBox/Label".text = str(player.velocity)
 	$"../../debugdata/VBox/Label2".text = str(direction)
+	$"../../debugdata/VBox/Label5".text = str(player.animation.animation)
 	$"../../debugdata/VBox/Label4".text = str("is_turning", " " ,is_turning)
-	$"../../debugdata/VBox/Label5".text = str("_braking_finished", " " ,_braking_finished)
-	$"../../debugdata/VBox/Label6".text = str(player.animation.animation)
 
 	if abs(player.velocity.x) < 1.0 and direction == 0:
 		state_machine.change_to("Idle")

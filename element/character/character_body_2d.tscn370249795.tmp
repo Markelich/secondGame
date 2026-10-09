@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cekla61e1s0mr" path="res://element/character/fsm/idle.gd" id="4_m2b8w"]
 [ext_resource type="Script" uid="uid://bdtn8aamlrk1k" path="res://element/character/fsm/run.gd" id="5_urrlp"]
 [ext_resource type="Script" uid="uid://cp7rnx1t6rmxh" path="res://element/character/fsm/air.gd" id="6_b844p"]
-[ext_resource type="Script" uid="uid://lmyiwpkx17ap" path="res://element/character/fsm/startbreaking.gd" id="8_mfdun"]
+[ext_resource type="Script" uid="uid://lmyiwpkx17ap" path="res://element/character/break.gd" id="8_u1l4j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bhunq"]
 radius = 11.0
@@ -32,6 +32,7 @@ script = ExtResource("1_h5500")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1573869798]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1362300860]
+visible = false
 position = Vector2(-2, 5)
 shape = SubResource("CapsuleShape2D_bhunq")
 
@@ -39,7 +40,7 @@ shape = SubResource("CapsuleShape2D_bhunq")
 texture_filter = 1
 material = SubResource("ShaderMaterial_wkn5b")
 sprite_frames = ExtResource("1_5v4hx")
-animation = &"jump"
+animation = &"return"
 speed_scale = 1.4
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1073115924]
@@ -85,10 +86,6 @@ text = "Ху5сосина"
 layout_mode = 2
 text = "Ху5сосина"
 
-[node name="Label6" type="Label" parent="debugdata/VBox" unique_id=902232466]
-layout_mode = 2
-text = "Ху5сосина"
-
 [node name="FSM" type="Node" parent="." unique_id=1984849516]
 script = ExtResource("3_w17fs")
 start_state = NodePath("Idle")
@@ -102,8 +99,8 @@ script = ExtResource("5_urrlp")
 [node name="Air" type="Node" parent="FSM" unique_id=1288481467]
 script = ExtResource("6_b844p")
 
-[node name="Startbreaking" type="Node" parent="FSM" unique_id=1068955549]
-script = ExtResource("8_mfdun")
+[node name="Break" type="Node" parent="FSM" unique_id=1068955549]
+script = ExtResource("8_u1l4j")
 
 [node name="TimerBufferJump" type="Timer" parent="." unique_id=1533169143]
 wait_time = 0.11
