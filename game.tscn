@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://lksxsffdago3"]
+
+[ext_resource type="PackedScene" uid="uid://c4efcnqf0wbym" path="res://element/FightField/fight_field.tscn" id="1_80nbo"]
+
+[node name="Game" type="Node2D" unique_id=2146137376]
+
+[node name="FightField" parent="." unique_id=1406945918 instance=ExtResource("1_80nbo")]
