@@ -7,16 +7,21 @@ func enter(_msg: Dictionary={}):
 	$"../../debugdata/VBox/Label3".set_text(name)
 	if _msg.has("do_jump"):
 		player.velocity.y = player.JUMP_VELOCITY
-	else:
+	elif not _msg.has("no_coyote"):
 		coyoteTimer.start()
 	
 
 func inner_physics_process(_delta: float) -> void:
 	
+	# В прыжке «вниз» — рывок в воздухе (один раз за прыжок).
+	if not player.air_dash_used and Input.is_action_just_pressed("ui_down"):
+		state_machine.change_to("AirDash")
+		return
+
 	if Input.is_action_pressed("ui_accept") and player.velocity.y < 0:
 		player.velocity += player.get_gravity() * 0.88 * _delta
 	elif player.velocity.y >= 0:
-		player.velocity += player.get_gravity() * 1.7 * _delta
+		player.velocity += player.get_gravity() * _delta
 	else: 
 		player.velocity += player.get_gravity() * 3.7 * _delta
 

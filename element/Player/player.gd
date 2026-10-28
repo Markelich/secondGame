@@ -4,13 +4,20 @@ extends CharacterBody2D
 
 @onready var animation = $AnimatedSprite2D
 
+## Рывок в воздухе уже потрачен в текущем прыжке.
+var air_dash_used: bool = false
+
 const SPEED: float = 900.0
 const SPEED_POINT_TO_JOG = 300.0
 const SPEED_POINT_TO_RUN = 500.0
 const ACCELETATION: float = 430
 const SPIN_ACCELERATION: float = 180.0
 const BRAKE_TIME: float = 0.2
-const JUMP_VELOCITY = -550
+const JUMP_VELOCITY = -430
+## Скорость горизонтального рывка в воздухе.
+const AIR_DASH_SPEED: float = 800.0
+## Сколько длится рывок (секунды).
+const AIR_DASH_TIME: float = 0.18
 const TURN_RETURN_THRESHOLD: float = 30.0
 
 func play_if_not(anim: StringName) -> void:
@@ -29,6 +36,12 @@ func update_facing() -> void:
 
 
 
+
+
+func _physics_process(_delta: float) -> void:
+	# Рывок в воздухе даётся один раз за прыжок: на земле заряд восстанавливается.
+	if is_on_floor():
+		air_dash_used = false
 
 
 func _on_player_colision_area_entered(area: Area2D) -> void:

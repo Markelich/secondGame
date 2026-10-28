@@ -6,10 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://lxyptbdopcvq" path="res://assets/Sonic/craftpix-net-245126-free-pixel-sky-with-parallax-clouds-for-2d-games/background 2/3.png" id="3_n23v6"]
 [ext_resource type="Texture2D" uid="uid://crbkkpp8q6sn" path="res://assets/Sonic/craftpix-net-245126-free-pixel-sky-with-parallax-clouds-for-2d-games/background 2/4.png" id="4_n23v6"]
 [ext_resource type="Texture2D" uid="uid://c4vmnmb3luohd" path="res://assets/Sonic/craftpix-net-245126-free-pixel-sky-with-parallax-clouds-for-2d-games/background 2/5.png" id="5_xv3e0"]
+[ext_resource type="Texture2D" uid="uid://bdv4c7as3jvms" path="res://assets/Futuristic City Parallax/city4plan.png" id="6_38iac"]
+[ext_resource type="Texture2D" uid="uid://bn1j0s0gols2e" path="res://assets/Futuristic City Parallax/city2plan.png" id="6_xt3o8"]
 [ext_resource type="PackedScene" uid="uid://de1lv7crleswc" path="res://element/Mighty/Mighty.tscn" id="7_7o446"]
+[ext_resource type="Texture2D" uid="uid://bxnrtpihuxmsl" path="res://assets/Futuristic City Parallax/city1plan.png" id="7_38iac"]
+[ext_resource type="Texture2D" uid="uid://by3m4he2nrba6" path="res://assets/Futuristic City Parallax/city3plan.png" id="7_xuqua"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_tlmys"]
-b = Vector2(812, 0)
+b = Vector2(3329, -1)
 
 [node name="FightField" type="Node2D" unique_id=1406945918]
 
@@ -53,12 +57,53 @@ repeat_size = Vector2(576, 0)
 position = Vector2(287, 162)
 texture = ExtResource("5_xv3e0")
 
+[node name="Parallax2D6" type="Parallax2D" parent="." unique_id=1607445697]
+scroll_scale = Vector2(0.05, 0.02)
+repeat_size = Vector2(312, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D6" unique_id=961825447]
+position = Vector2(157, 257)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_38iac")
+
+[node name="Parallax2D7" type="Parallax2D" parent="." unique_id=88776581]
+scroll_scale = Vector2(0.1, 0.05)
+repeat_size = Vector2(312, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D7" unique_id=1591871711]
+position = Vector2(156, 265)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_xuqua")
+
+[node name="Parallax2D8" type="Parallax2D" parent="." unique_id=1685141592]
+scroll_scale = Vector2(0.15, 0.09)
+repeat_size = Vector2(312, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D8" unique_id=715212227]
+position = Vector2(157, 251)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_xt3o8")
+
+[node name="Parallax2D9" type="Parallax2D" parent="." unique_id=734169388]
+scroll_scale = Vector2(0.25, 0.2)
+repeat_size = Vector2(312, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D9" unique_id=1122511308]
+position = Vector2(160, 253)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_38iac")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=566605602]
 position = Vector2(36, 236)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2123776124]
 position = Vector2(0, -16)
 shape = SubResource("SegmentShape2D_tlmys")
+one_way_collision_margin = 97.0
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1605796659]
 offset_left = 1.0

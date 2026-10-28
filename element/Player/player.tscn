@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://bsb6i4opvbb66" path="res://element/Player/fsm/air.gd" id="7_mriqy"]
 [ext_resource type="Script" uid="uid://b5le2ojrwyua3" path="res://element/Player/fsm/startbreaking.gd" id="8_ado73"]
 [ext_resource type="Script" uid="uid://cph4367qkvbr2" path="res://element/Player/fsm/spinattack.gd" id="9_rpyj5"]
+[ext_resource type="Script" uid="uid://coyvm8q2xiif4" path="res://element/Player/fsm/air_dash.gd" id="10_l7umw"]
+[ext_resource type="Script" uid="uid://2af2asbc2mn2" path="res://element/Player/camera_2d.gd" id="10_ooydc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wkn5b"]
 shader = ExtResource("2_5rg7s")
@@ -38,9 +40,6 @@ speed_scale = 1.4
 position = Vector2(-2, 5)
 shape = SubResource("CapsuleShape2D_bhunq")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1073115924]
-offset = Vector2(0, -40)
-
 [node name="debugdata" type="Control" parent="." unique_id=1090321209]
 layout_mode = 3
 anchors_preset = 0
@@ -52,6 +51,7 @@ tooltip_text = "
 "
 
 [node name="VBox" type="VBoxContainer" parent="debugdata" unique_id=1398848749]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -5.8
@@ -105,6 +105,9 @@ script = ExtResource("8_ado73")
 [node name="Spinattack" type="Node" parent="FSM" unique_id=690704655]
 script = ExtResource("9_rpyj5")
 
+[node name="AirDash" type="Node" parent="FSM" unique_id=787499026]
+script = ExtResource("10_l7umw")
+
 [node name="TimerBufferJump" type="Timer" parent="." unique_id=1533169143]
 wait_time = 0.11
 one_shot = true
@@ -119,5 +122,13 @@ one_shot = true
 position = Vector2(-2, 5)
 shape = SubResource("CapsuleShape2D_tlmys")
 debug_color = Color(0.9659874, 0.023817599, 0.4718848, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1567556908]
+offset = Vector2(0, -30)
+drag_left_margin = 0.35
+drag_top_margin = 0.15
+drag_right_margin = 0.35
+drag_bottom_margin = 1.0
+script = ExtResource("10_ooydc")
 
 [connection signal="area_entered" from="playerColision" to="." method="_on_player_colision_area_entered"]

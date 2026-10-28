@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dk676bnn2fges"]
+
+[ext_resource type="Script" uid="uid://bblvcxq6e7173" path="res://element/Tails/tails.gd" id="1_root"]
+[ext_resource type="SpriteFrames" uid="uid://chnk11trtqyoj" path="res://element/Tails/tails_frames.tres" id="2_frames"]
+[ext_resource type="Shader" uid="uid://br5ug68ay4syp" path="res://element/Tails/tails.gdshader" id="3_shader"]
+[ext_resource type="Script" uid="uid://bcoefdc0pyhj1" path="res://components/fsm/state_machine.gd" id="4_fsm"]
+[ext_resource type="Script" uid="uid://451slxg6phgb" path="res://element/Tails/state_machine/idle.gd" id="5_idle"]
+[ext_resource type="Script" uid="uid://bxsmddk4h76e1" path="res://element/Tails/state_machine/walk.gd" id="6_walk"]
+[ext_resource type="Script" uid="uid://b77oxd627hucp" path="res://element/Tails/state_machine/run.gd" id="7_run"]
+[ext_resource type="Script" uid="uid://wwy7t0wgh02i" path="res://element/Tails/state_machine/air.gd" id="8_air"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tails"]
+radius = 8.0
+height = 28.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vqhx0"]
+shader = ExtResource("3_shader")
+shader_parameter/key_color = Color(0.14902, 0.482353, 0.854902, 1)
+shader_parameter/tolerance = 0.55200002622
+
+[node name="Tails" type="CharacterBody2D" unique_id=1496134918]
+script = ExtResource("1_root")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=325718639]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_tails")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=642840694]
+texture_filter = 1
+material = SubResource("ShaderMaterial_vqhx0")
+position = Vector2(0, -6)
+sprite_frames = ExtResource("2_frames")
+animation = &"walk"
+
+[node name="LedgeCheck" type="RayCast2D" parent="." unique_id=328760731]
+position = Vector2(12, -6)
+target_position = Vector2(0, 26)
+
+[node name="FSM" type="Node" parent="." unique_id=1341822363]
+script = ExtResource("4_fsm")
+start_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="FSM" unique_id=708020651]
+script = ExtResource("5_idle")
+
+[node name="Walk" type="Node" parent="FSM" unique_id=377470937]
+script = ExtResource("6_walk")
+
+[node name="Run" type="Node" parent="FSM" unique_id=440419175]
+script = ExtResource("7_run")
+
+[node name="Air" type="Node" parent="FSM" unique_id=939187285]
+script = ExtResource("8_air")
